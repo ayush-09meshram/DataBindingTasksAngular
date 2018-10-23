@@ -7,13 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GrandparentComponent implements OnInit {
 
-  recieveMessage($event){
-  this.message = $event
-  }
-
   constructor() { }
 
   ngOnInit() {
+  }
+
+  receiveMessage($event){
+    this.message = $event
   }
 
 }

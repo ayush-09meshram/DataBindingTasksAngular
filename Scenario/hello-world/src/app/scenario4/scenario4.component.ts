@@ -9,6 +9,8 @@ export class Scenario4Component implements OnInit {
 
   constructor() { }
 
+  message = "hello-world"
+
   ngOnInit() {
   }
 
