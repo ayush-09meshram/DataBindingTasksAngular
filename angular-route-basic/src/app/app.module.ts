@@ -8,11 +8,10 @@ import { UserListComponent } from './user-list/user-list.component';
 import { UserComponent } from './user/user.component';
 import { RouterModule, Routes } from '@angular/router';
 
-const appRoute: Routes = [
+const appRoutes: Routes = [
 {path: 'home', component: 'HomeComponent'},
-{path: 'user', component: 'UserComponent'},
+{path: 'user', children:[ path: 'list', component: 'UserListComponent', children:[path:'detail/:name', component: 'UserComponent']]},
 {path: 'about', component: 'AboutComponent'},
-{path: 'userList', component: 'UserListComponent'},
 {path: '', redirectTo: '/home', pathMatch: 'full'},
 {path: '**', redirectTo: '/home', pathMatch: 'full'}
 ]
@@ -27,7 +26,7 @@ const appRoute: Routes = [
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoute)
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]

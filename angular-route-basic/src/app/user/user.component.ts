@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+
 
 @Component({
   selector: 'app-user',
@@ -6,10 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
-
-  constructor() { }
+name: any;
+sub: any;
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
+this.sub = this.route.params.subscribe(params =>{
+this.name = params['name'];
+})
   }
 
 }
