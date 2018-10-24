@@ -22,7 +22,7 @@ export class DepartmentDetailComponentComponent implements OnInit {
 
   goPrevious(){
     let previousId = this.departmentId - 1;
-    this.router.navigate(['/departments', previousId]);
+    this.router.navigate(['../',{id: selectedId}],{relativeTo: this.route});
   }
 
   goNext(){
